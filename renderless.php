@@ -1,7 +1,8 @@
 <?php
 require 'lessc.inc.php';
 
-// Define the output file and the input directory
+// Setup
+
 // $input_dir: A relative path to your css/less files. The path should be relative to where the renderless.php file is located.
 // $output_file: If this variable is defined renderless will output a compiled css file. Again, this is relative to where renderless.php is located.
 // $pointer_file: You can specify a single file for renderless to render, the file can include @import statements and act as an organizer.
