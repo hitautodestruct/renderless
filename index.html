@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Renderless : Small PHP script for rendering lesscss on the fly." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Renderless</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/hitautodestruct/renderless">View on GitHub</a>
+
+          <h1 id="project_title">Renderless</h1>
+          <h2 id="project_tagline">Small PHP script for rendering lesscss on the fly.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/hitautodestruct/renderless/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/hitautodestruct/renderless/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h2>What?</h2>
+
+<p>Renderless is a small script for generating and concatenating minified <a href="http://lesscss.org/">less</a> and css files either on the fly or to a single file using PHP.
+Renderless uses the <a href="http://leafo.net/lessphp/">lessphp</a> library to generate less files.</p>
+
+<h2>How?</h2>
+
+<h3>Setup</h3>
+
+<p>Simply download both files (<code>lessc.inc.php</code> and <code>renderless.php</code>) and place them in one of your directories in your project:</p>
+
+<p><code>myproject\renderless.php</code>
+<code>myproject\lessc.inc.php</code></p>
+
+<p>Open up <code>renderless.php</code> in an editor and configure your settings:</p>
+
+<p><code>$input_dir</code>: A relative path to your css/less files. The path should be relative to where the renderless.php file is located.</p>
+
+<p><code>$output_file</code>: If this variable is defined renderless will output a compiled css file. Again, this is relative to where renderless.php is located.</p>
+
+<p><code>$pointer_file</code>: You can specify a single file for renderless to render, the file can include <a href="https://github.com/import" class="user-mention">@import</a> statements and act as an organizer.</p>
+
+<h3>Manually generate a css file</h3>
+
+<p>Once this is done you can manually render the css/less file by accessing it in your browser.
+Just type in the path to the file i.e. <code>http://localhost/myproject/renderless.php</code>.
+If you've set up the <code>$output_file</code> option renderless will create a compiled css file according to what you wrote.</p>
+
+<h3>Render the code on the fly</h3>
+
+<p>If you want renderless to act as an immediate interpreter you can point your style declaration to the renderless.php file in your html like so:</p>
+
+<p><strong>WARNING</strong>: This script has no caching method so it is advised to not use it in a production environment. Use the manual option instead.</p>
+
+<div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"renderless.php"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+</pre></div>
+
+<p>Fore debugging your css you can also use the <code>min</code> query string and renderless will not minify your code:</p>
+
+<div class="highlight"><pre><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"renderless.php?min=0"</span> <span class="err">...</span> <span class="nt">&gt;</span>
+</pre></div>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Renderless maintained by <a href="https://github.com/hitautodestruct">hitautodestruct</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
