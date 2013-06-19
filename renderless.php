@@ -29,7 +29,8 @@ function compress( $string ) {
     $string = preg_replace('/ ?([,:;{}]) ?/','$1',$string);
     
     $string = str_replace(array('( ',' (',') ',' )'),array('(','(',')',')'),$string);
-
+    $string = str_replace( array( 'd(', 't(' ), array( 'd (', 't (' ), $string );
+    
     // trailing;
     $string = preg_replace('/;}/','}',$string);
     
